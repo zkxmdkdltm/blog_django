@@ -1,0 +1,12 @@
+<h1>LikeLion 10th Blog Project</h1>
+<br />
+<a href="{% url 'new'%}">새 글 작성하기</a> <!-- 추가 -->
+{% for blog in blogs %} <!-- home 함수에서 던져주는 blogs 는 QuerySet이다. -->
+<div>
+  <a href="{%url 'detail' blog.id %}">  
+  <h5>{{blog.title}}</h5> <!--blog는 object이다 -->
+  {{blog.created_at}}
+  <p>{{blog.summary}}</p>
+</div>
+<br />
+{% endfor %}
